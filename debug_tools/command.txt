@@ -1,0 +1,7 @@
+python validate_maskrcnn.py -c config/maskrcnn_coco.yaml -g 1 -s saving/debug/ -d /home/haoyuefan/xk_data/superpoint/coco/full/ -m saving/models/object_rcnn3/object_rcnn_iter124000.pth 
+
+python train_maskrcnn.py -c config/maskrcnn_coco.yaml -d /home/haoyuefan/xk_data/superpoint/coco/full/ -s saving/models/ -g 1 -m saving/models/object_rcnn3/object_rcnn_iter124000.pth 
+
+python debug_tools/show_match.py -d /home/haoyuefan/xk_data/superpoint/match_debug/pairs/ -s /home/haoyuefan/xk_data/superpoint/match_debug/result/ -g 1 -c config/maskrcnn_coco.yaml -m saving/models/object_rcnn_iter205000.pth 
+
+python train_synthetic.py -c config/superpoint_synthetic.yaml -d /home/haoyuefan/xk_data/superpoint/synthetic_dataset -g 1 -s saving/models/synthetic -p 1 -m saving/models/pretrained/maskrcnn_resnet50_fpn_coco-bf2d0c1e.pth

@@ -1,0 +1,59 @@
+data:
+    name: 'coco'
+    nclass: 81
+    TRAIN: 'coco_2014_train'
+    VAL: 'coco_2014_minival'
+    TEST: 'coco_2014_valminusminival'
+    normal_size: [384, 1280] # min_size, max_size
+    cache_in_memory: false
+    validation_size: 96
+    augmentation:
+        photometric:
+            enable: true
+            primitives: [
+                'random_brightness', 'random_contrast', 'additive_speckle_noise',
+                'additive_gaussian_noise', 'add_shade', 'motion_blur']
+            params:
+                random_brightness: {max_change: 50}
+                random_contrast: {max_change: [0.5, 1.5]}
+                additive_gaussian_noise: {std: [0, 10]}
+                additive_speckle_noise: {intensity: 5}
+                add_shade:
+                    amplitude: [-0.5, 0.5]
+                    kernel_size_interval: [100, 150]
+                motion_blur: {max_ksize: 3}
+        homographic:
+            enable: false  # not implemented
+    warped_pair:
+        enable: false
+        params:
+            translation: true
+            rotation: true
+            scaling: true
+            perspective: true
+            scaling_amplitude: 0.2
+            perspective_amplitude_x: 0.2
+            perspective_amplitude_y: 0.2
+            patch_ratio: 0.85
+            max_angle: 1.57
+            allow_artifacts: true
+        valid_border_margin: 3
+model:
+    superpoint:
+        cell : 8
+        detection_threshold: 0.2
+        batch_size : 1
+    maskrcnn:
+        trainable_layers: 0  # backbone trainable layers
+        fix_backbone: true
+        backbone_type: 'resnet50'
+        image_mean: [0.45, 0.45, 0.45]
+        image_std: [0.225, 0.225, 0.225]
+    gcn:
+        descriptor_dim: 256
+        points_encoder_dims: [2, 4, 8, 16]
+        hidden_dim: 512
+        dropout: 0
+        alpha: 0.2
+        nheads: 4
+        nout: 2048

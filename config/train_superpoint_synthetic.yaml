@@ -1,0 +1,66 @@
+data:
+  name: 'synthetic'
+  nclass: 81
+  normal_size: [320, 320] # min_size, max_size
+  cache_in_memory: false
+  validation_size: 96
+  augmentation:
+    photometric:
+      enable: true
+      primitives: [
+          'random_brightness', 'random_contrast', 'additive_speckle_noise',
+          'additive_gaussian_noise', 'add_shade', 'motion_blur']
+      params:
+        random_brightness: {max_change: 50}
+        random_contrast: {max_change: [0.5, 1.5]}
+        additive_gaussian_noise: {std: [0, 10]}
+        additive_speckle_noise: {intensity: 5}
+        add_shade:
+          amplitude: [-0.5, 0.5]
+          kernel_size_interval: [100, 150]
+        motion_blur: {max_ksize: 3}
+    homographic:
+      enable: false  # not implemented
+  warped_pair:
+    enable: false
+    params:
+      translation: true
+      rotation: true
+      scaling: true
+      perspective: true
+      scaling_amplitude: 0.2
+      perspective_amplitude_x: 0.2
+      perspective_amplitude_y: 0.2
+      patch_ratio: 0.85
+      max_angle: 1.57
+      allow_artifacts: true
+    valid_border_margin: 3
+model:
+  superpoint:
+    cell : 8
+    train:
+      name: 'superpoint'
+      add_descriptor: false
+      lambda_d: 250
+      positive_margin: 1
+      negative_margin: 0.2
+      lambda_loss: 5
+      kernel_reg: 0.
+      nms: 4
+      batch_size : 2
+      epochs     : 10
+      lr         : 0.00001
+      momentum   : 0
+      w_decay    : 0.0001
+      milestones : [10000, 20000, 50000, 100000, 150000] # iter
+      gamma      : 0.3
+      dataset_size : 10000
+      checkpoint: 1000
+      gaussian_region:
+        radius : 8
+        milestones : [20000, 50000, 100000]  # iter
+        gamma : 0.5
+    eval:
+      detection_threshold: 0.15
+      batch_size : 1
+      dataset_size : 500

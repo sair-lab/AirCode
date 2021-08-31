@@ -1,0 +1,25 @@
+data:
+  name: 'kitti'
+  nclass: 81
+  normal_size: [384, 1280] # min_size, max_size
+  cache_in_memory: false
+  validation_size: 96
+model:
+  superpoint:
+    cell : 8
+    detection_threshold: 0.2
+  maskrcnn:
+    add_maskrcnn: true
+    trainable_layers: 5  # backbone trainable layers
+    fix_backbone: true
+    backbone_type: 'resnet50'
+    image_mean: [0.45, 0.45, 0.45]
+    image_std: [0.225, 0.225, 0.225]
+  gcn:
+    descriptor_dim: 256
+    points_encoder_dims: [2, 4, 8, 16]
+    hidden_dim: 512
+    dropout: 0
+    alpha: 0.2
+    nheads: 4
+    nout: 2048

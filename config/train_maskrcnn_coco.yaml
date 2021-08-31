@@ -1,0 +1,25 @@
+data:
+  name: 'coco'
+  nclass: 81
+  # TRAIN: 'coco_2014_train'
+  TRAIN: 'coco_2014_train'
+  VAL: 'coco_2014_minival'
+  TEST: 'coco_2014_valminusminival'
+  normal_size: [320, 320] # min_size, max_size
+  cache_in_memory: false
+  validation_size: 96
+model:
+  maskrcnn: 
+    trainable_layers: 5  # backbone trainable layers
+    backbone_type: 'resnet50'
+    image_mean: [0.45, 0.45, 0.45]
+    image_std: [0.225, 0.225, 0.225]
+    batch_size : 8
+    epochs     : 10
+    lr         : 0.00001
+    momentum   : 0
+    w_decay    : 0.0001
+    milestones : [10000, 20000, 50000, 100000, 150000] # iter
+    gamma      : 0.3
+    dataset_size : 10000
+    checkpoint: 1000

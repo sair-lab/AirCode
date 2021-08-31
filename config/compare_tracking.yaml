@@ -1,0 +1,9 @@
+intervals: [1, 3, 5]  # select lines, the number represent the interval
+title: kitti          # figure title
+colors: ['green', 'red', 'blue', 'yellow', 'darkviolet', 'sandybrown']  # lines colors
+linewidth: 3          # line width
+xlabel: recall        # x-axis name 
+ylabel: precision     # y-axis name
+fontsize: 20          # font size
+figsize: (10, 10)     # fingure size, inch
+dpi: 100              # dots per inch
