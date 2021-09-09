@@ -1,4 +1,4 @@
-# Object Descriptor
+# AirCode
 
 This repo contains source codes for the arXiv preprint ["A Robust Object Encoding Method"](https://arxiv.org/abs/2105.00327)
 
