@@ -8,7 +8,7 @@ Object matching comparison when the objects are non-rigid and the view is change
 
 ![](experiments/demo/object-matching1.gif) ![](experiments/demo/object-matching2.gif) 
 
-Relocalization in KITTI
+Relocalization on KITTI datasets
 
 ![](experiments/demo/kitti-relocalization.gif)
 
@@ -40,7 +40,7 @@ For single-object matching experiment. We select five sequences and they are "Bl
 
 ## Examples
 
-### Relocalization in KITTI Datasets
+### Relocalization on KITTI Datasets
 
 1. Extract object descrptors
    ```
@@ -57,7 +57,7 @@ For single-object matching experiment. We select five sequences and they are "Bl
    python experiments/place_recogination/offline_topK.py -c config/experiment_tracking.yaml -g 1 -d PATH_TO_DATASET -n PATH_TO_MIDDLE_RESULTS -s PATH_TO_SAVE_RESULTS
    ```
 
-### Object Matching in OTB, VOT or KITTI Tracking Datasets
+### Object Matching on OTB, VOT or KITTI Tracking Datasets
 
 * Run multi-object matching experiment in KITTI Tracking Datasets
   Modify the [config file](config/experiment_tracking.yaml) and run  
