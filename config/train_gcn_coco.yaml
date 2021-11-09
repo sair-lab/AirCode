@@ -79,7 +79,7 @@ model:
       batch_szie: 16
       positive_margin: 1
       negative_margin: 0.2
-      lambda_d: 1
+      lambda_d: 0.1
       epochs     : 100
       lr         : 0.000001
       momentum   : 0
