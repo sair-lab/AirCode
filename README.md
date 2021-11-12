@@ -14,12 +14,13 @@ Relocalization on KITTI datasets
 
 
 ## Dependencies
-* Python
-* PyTorch
-* OpenCV
-* Matplotlib
-* NumPy
-* Yaml
+* Python 3.7
+* Torchvision 0.8.0
+* PyTorch 1.7.0
+* OpenCV 4.4.0
+* Matplotlib 3.3.3
+* NumPy 1.19.2
+* Pyyaml 5.3.1
   
 
 ## Data
