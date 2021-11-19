@@ -79,12 +79,12 @@ model:
       batch_szie: 16
       positive_margin: 1
       negative_margin: 0.2
-      lambda_d: 1
+      lambda_d: 0.5
       epochs     : 100
-      lr         : 0.000001
+      lr         : 0.0001
       momentum   : 0
-      w_decay    : 0.0001
+      w_decay    : 0.00001
       milestones : [1000, 2000, 5000, 10000, 15000] # iter
       gamma      : 0.3
       checkpoint: 1000
-      weight_lambda: [0.1, 0.1]
+      weight_lambda: [0.1, 10]
