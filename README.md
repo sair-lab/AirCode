@@ -50,12 +50,12 @@ For single-object matching experiment. We select five sequences and they are "Bl
 
 2. Compute precision-recall curves
    ```
-   python experiments/place_recogination/offline_process.py -c config/experiment_tracking.yaml -g 1 -d PATH_TO_DATASET -n PATH_TO_MIDDLE_RESULTS -s PATH_TO_SAVE_RESULTS
+   python experiments/place_recogination/offline_process.py -c config/experiment_place_recognization.yaml -d PATH_TO_DATASET -n PATH_TO_MIDDLE_RESULTS -s PATH_TO_SAVE_RESULTS
    ```
 
 3. Compute top-K relocalization results
    ```
-   python experiments/place_recogination/offline_topK.py -c config/experiment_tracking.yaml -g 1 -d PATH_TO_DATASET -n PATH_TO_MIDDLE_RESULTS -s PATH_TO_SAVE_RESULTS
+   python experiments/place_recogination/offline_topK.py -c config/experiment_place_recognization.yaml -d PATH_TO_DATASET -n PATH_TO_MIDDLE_RESULTS -s PATH_TO_SAVE_RESULTS
    ```
 
 ### Object Matching on OTB, VOT or KITTI Tracking Datasets
