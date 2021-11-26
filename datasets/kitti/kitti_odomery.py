@@ -33,8 +33,8 @@ class KittiOdometry(Dataset):
     self.image_names = image_names
     self.length = len(image_names)
     self.poses_gt = self.read_label_file(label_file)
-    # loop_gt, num_loop = self.find_loops(dis_thr, angle_thr, interval)
-    loop_gt, num_loop = None, None
+    loop_gt, num_loop = self.find_loops(dis_thr, angle_thr, interval)
+    # loop_gt, num_loop = None, None
     self.loop_gt = loop_gt
     self.num_loop = num_loop
     self.transform = transforms.ToTensor()
