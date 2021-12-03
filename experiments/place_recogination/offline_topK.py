@@ -160,8 +160,14 @@ def relocalization_offline(configs):
           if k > len(scores):
             k_loop_images = match_images
           else:
-            _, indices = scores.topk(k)
-            indices = indices.numpy().tolist()
+            value, _ = scores.topk(k)
+            min_v = value[-1].item()
+            indices = []
+            for i_score in range(len(scores)):
+              if(scores[i_score] >= min_v):
+                indices.append(i_score)
+           # _, indices = scores.topk(k)
+           # indices = indices.numpy().tolist()
             for idx in indices:
               k_loop_images.append(match_images[idx])
 
