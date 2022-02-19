@@ -1,7 +1,6 @@
 # AirCode
 
-This repo contains source codes for the arXiv preprint ["AirCode: A Robust Object Encoding Method"](https://arxiv.org/abs/2105.00327)
-
+Xu, Kuan, [Chen Wang](https://chenwang.site), Chao Chen, Wei Wu, and Sebastian Scherer. "["AirCode: A Robust Object Encoding Method"](https://arxiv.org/abs/2105.00327)." IEEE Robotics and Automation Letters (2022). (Accepted to ICRA 2022)
 
 ## Demo
 Object matching comparison when the objects are non-rigid and the view is changed, left is the result of our method while right is the result of NetVLAD
