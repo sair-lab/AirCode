@@ -70,3 +70,7 @@ For single-object matching experiment. We select five sequences and they are "Bl
   ```
   python experiments/object_tracking/single_object_tracking.py -c config/experiment_tracking.yaml -g 1 -s PATH_TO_SAVE_RESULTS -d PATH_TO_DATASET -m PATH_TO_MODELS 
   ```
+
+### Pretrained Models
+
+* Go to [this link](https://github.com/sair-lab/AirCode/releases/tag/v2.0.0).
